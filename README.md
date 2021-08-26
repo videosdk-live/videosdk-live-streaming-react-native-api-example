@@ -21,10 +21,6 @@ This code sample demonstrates a [Video Live Streaming API](https://docs.videosdk
 - [ ] Private streaming with authentication.
 - [ ] Embeded live streaming player.
 
-## Device support
-
-Visit our official [documentation](https://docs.videosdk.live/docs/live-streaming/intro) for more information.
-
 ## Prerequisites
 
 You must have the following installed:
@@ -32,17 +28,41 @@ You must have the following installed:
 - Node JS
 - NPM
 
-## Running the Authentication server
+## Getting started
 
-Follow [videosdk-rtc-nodejs-sdk-example](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example) to run authentication server.
+1. Run the authentication server
+   Follow [videosdk-rtc-nodejs-sdk-example](https://github.com/videosdk-live/videosdk-rtc-nodejs-sdk-example) to run authentication server.
 
-## Running the app
+2. Clone the repo
 
-To run the app, first install the dependencies and then run the server.
+   ```sh
+   $ git clone https://github.com/videosdk-live/videosdk-live-streaming-react-native-api-example.git
+   ```
 
-```sh
-$ npm install
-$ npm start
-```
+3. Copy the `.env.example` file to `.env` file.
+
+   ```sh
+   $ cp .env.example .env
+   ```
+
+4. Update the api server url in the `.env` file that points to the authentication server.
+
+   ```
+   REACT_APP_SERVER_URL=http://localhost:9000
+   ```
+
+5. Install NPM packages
+
+   ```sh
+   $ npm install
+   ```
+
+6. Run the app
+
+   ```sh
+   $ npm run start
+   $ npm android
+   $ npm ios
+   ```
 
 For more information, visit [official documentation](https://docs.videosdk.live/docs/live-streaming/intro)

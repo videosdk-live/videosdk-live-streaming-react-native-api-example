@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import UpStream from "./src/UpStream";
 import DownStream from "./src/DownStream";
-import { BASE_URL, LOCAL_URL } from "@env";
+import { REACT_APP_VIDEOSDK_URL, REACT_APP_SERVER_URL } from "@env";
 
 export default function App() {
   const [streamURLs, setstreamURLs] = useState({
@@ -14,7 +14,7 @@ export default function App() {
 
   const getToken = async () => {
     try {
-      const response = await fetch(`${LOCAL_URL}/get-token`, {
+      const response = await fetch(`${REACT_APP_SERVER_URL}/get-token`, {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -29,7 +29,7 @@ export default function App() {
   };
 
   const getStreamURLs = async (token) => {
-    const API_URL = `${BASE_URL}v1/livestreams`;
+    const API_URL = `${REACT_APP_VIDEOSDK_URL}/v1/livestreams`;
     const data = {
       record: true,
       name: "zujoLive",

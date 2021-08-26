@@ -57,7 +57,6 @@ buck-out
 .gradle
 local.properties
 *.iml
-/android/
 
 # Node
 node_modules
@@ -111,3 +110,6 @@ package-lock.json
 
 # Android memory profiler files
 *.hprof
+
+# dotenv environment variables file
+.env
