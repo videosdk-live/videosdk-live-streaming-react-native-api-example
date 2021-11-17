@@ -9,7 +9,6 @@ This code sample demonstrates a [Video Live Streaming API](https://docs.videosdk
 - Low latency across the globe.
 - Design for mobile streaming experience.
 
-![live-streaming.jpg](./public/live-streaming.jpg)
 
 ## Features
 
