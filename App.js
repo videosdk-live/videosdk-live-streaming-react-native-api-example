@@ -32,7 +32,7 @@ export default function App() {
     const API_URL = `${REACT_APP_VIDEOSDK_URL}/v1/livestreams`;
     const data = {
       record: true,
-      name: "zujoLive",
+      name: "videosdk",
     };
     const options = {
       method: "POST",
