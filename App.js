@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import UpStream from "./src/UpStream";
-import DownStream from "./src/DownStream";
 import { REACT_APP_VIDEOSDK_URL, REACT_APP_SERVER_URL } from "@env";
+import PlayBackStream from "./src/PlayBackStream";
 
 export default function App() {
   const [streamURLs, setstreamURLs] = useState({
     upstreamUrl: "",
-    downstreamUrl: "",
+    playbackHlsUrl: "",
   });
   const [upstreamVisible, setupstreamVisible] = useState(false);
-  const [downstreamVisible, setdownstreamVisible] = useState(false);
+  const [playbackstreamVisible, setplaybackstreamVisible] = useState(false);
 
   const getToken = async () => {
     try {
@@ -56,7 +56,7 @@ export default function App() {
     const token = await getToken();
     const urlS = await getStreamURLs(token);
     setstreamURLs({
-      downstreamUrl: urlS?.downstreamUrl,
+      playbackHlsUrl: urlS?.playbackHlsUrl,
       upstreamUrl: urlS?.upstreamUrl,
     });
   };
@@ -76,8 +76,8 @@ export default function App() {
       >
         <TouchableOpacity
           onPress={() => {
-            if (downstreamVisible) {
-              setdownstreamVisible(false);
+            if (playbackstreamVisible) {
+              setplaybackstreamVisible(false);
             }
             setupstreamVisible(true);
           }}
@@ -96,7 +96,7 @@ export default function App() {
             if (upstreamVisible) {
               setupstreamVisible(false);
             }
-            setdownstreamVisible(true);
+            setplaybackstreamVisible(true);
           }}
           style={{
             borderRadius: 8,
@@ -124,8 +124,8 @@ export default function App() {
           streamURLs={streamURLs}
           setupstreamVisible={setupstreamVisible}
         />
-      ) : downstreamVisible ? (
-        <DownStream setdownstreamVisible={setdownstreamVisible} />
+      ) : playbackstreamVisible ? (
+        <PlayBackStream setplaybackstreamVisible={setplaybackstreamVisible} />
       ) : (
         <Home />
       )}
